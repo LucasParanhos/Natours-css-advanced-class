@@ -62,13 +62,13 @@ body {
     align-items: center;
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo {
+.header__logo {
     height: 35px;
 }
 
@@ -80,7 +80,7 @@ body {
     margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -105,7 +105,7 @@ body {
     }
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -131,7 +131,7 @@ body {
     }
 }
 
-.text-box {
+.header__text-box {
     text-align: center;
 }
 
@@ -147,7 +147,7 @@ body {
     font-size: 1.6rem;
 }
 
-.animated-button {
+.btn--animated {
     animation: moveInBottom .5s backwards ease-out 1s;
 }
 
@@ -180,12 +180,12 @@ body {
     opacity: 0;
 }
 
-.btn-white {
+.btn--white {
     background-color: var(--white);
     color: var(--gray);
 }
 
-.btn-white::after {
+.btn--white::after {
     background: var(--white);
 }
 
