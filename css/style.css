@@ -7,6 +7,11 @@ Dark green: #28b485
 
 */
 
+html {
+    /* Using percentages to allow user settings of accecibility, 62.5% = 10px if the user didn't change the default font size */
+    font-size: 62.5%;
+}
+
 :root {
     --light-green: #7ed56f;
     --medium-green: #55c57a;
@@ -23,19 +28,22 @@ Dark green: #28b485
     --dark-green-alpha: #27b485cc;
 }
 
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }
 
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.7;
     color: var(--gray);
-    padding: 30px;
+    padding: 3rem;
+    box-sizing: border-box;
 }
 
 .header {
@@ -47,7 +55,7 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
     background-size: cover;
     background-position: top;
-    border-radius: 10px;
+    border-radius: 1rem;
     position: relative;
     display: flex;
     justify-content: center;
@@ -56,8 +64,8 @@ body {
 
 .logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo {
@@ -69,16 +77,16 @@ body {
     text-transform: uppercase;
     margin-top: -20vh;
     pointer-events: none;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     animation: .5s moveInLeft ease-out;
-    margin-right: calc(-35px/2);
+    margin-right: calc(-3.5rem/2);
 }
 
 @keyframes moveInLeft {
@@ -99,9 +107,9 @@ body {
 
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 18px;
+    letter-spacing: 1.8rem;
     opacity: 0;
 
     animation: moveInRight .5s forwards ease-out .5s;
@@ -131,25 +139,26 @@ body {
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
-    border-radius: 100px;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
     display: inline-block;
-    transition: 0.2s all;
+    transition: .2s all;
     position: relative;
+    font-size: 1.6rem;
 }
 
-.animated-button{
+.animated-button {
     animation: moveInBottom .5s backwards ease-out 1s;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px var(--black-alpha);
+    transform: translateY(-.3rem);
+    box-shadow: 0 10rem 20rem var(--black-alpha);
 }
 
 .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px var(--black-alpha);
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem var(--black-alpha);
 }
 
 .btn::after {
@@ -157,13 +166,13 @@ body {
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
     opacity: 1;
-    transition: 0.4s all;
+    transition: .4s all;
 }
 
 .btn:hover::after {
