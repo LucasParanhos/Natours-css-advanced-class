@@ -1,0 +1,22 @@
+{
+  "name": "natours-css-advanced-class",
+  "version": "1.0.0",
+  "description": "Natours css advanced class, starting to teach advanced SCSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasParanhos/Natours-css-advanced-class.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasParanhos/Natours-css-advanced-class/issues"
+  },
+  "homepage": "https://github.com/LucasParanhos/Natours-css-advanced-class#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
