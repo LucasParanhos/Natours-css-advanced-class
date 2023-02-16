@@ -8,7 +8,7 @@
     display: inline-block;
     transition: 0.2s all;
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
 
   &--animated {
@@ -17,7 +17,7 @@
 
   &:hover {
     transform: translateY(-0.3rem);
-    box-shadow: 0 10rem 20rem rgba($black, 0.2);
+    box-shadow: 0 1rem 2rem rgba($black, 0.2);
 
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -51,5 +51,31 @@
     &::after {
       background: $white;
     }
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    color: $green;
+    display: inline-block;
+    text-decoration: none;
+    font-size: $default-font-size;
+    font-weight: 700;
+    border-bottom: 1px solid $green;
+    transition: all 0.2s;
+    padding: .3rem;
+  }
+
+  &:hover {
+    background-color: $green;
+    color: $white;
+    transform: translateY(-0.2rem);
+    box-shadow: 0 1rem 2rem rgba($black, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 0.5rem 1rem var rgba($black, 0.2);
   }
 }
