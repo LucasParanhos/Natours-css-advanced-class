@@ -1,6 +1,7 @@
-.section-about {
+.section-about,
+.section-tours {
   background-color: $light-gray;
-  padding: 25vh 0;
+  padding: 25vh 6rem;
   margin-top: -20vh;
 }
 
@@ -19,4 +20,18 @@
   background-position: top;
   display: flex;
   align-items: center;
+}
+
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  scroll-padding: 18vh;
+
+  .scroll-clip {
+    scroll-snap-align: center;
+
+    &.header {
+      scroll-snap-align: start;
+    }
+  }
 }

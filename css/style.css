@@ -185,6 +185,37 @@ body {
   transform: translateY(0);
   box-shadow: 0 0.5rem 1rem var rgba(0, 0, 0, 0.2); }
 
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: 50rem;
+  position: relative; }
+  .card__side {
+    height: 50rem;
+    transition: all 0.6s ease-out;
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back--1 {
+        background-image: linear-gradient(to bottom right, #ffb980, #ff7730); }
+      .card__side--back--2 {
+        background-image: linear-gradient(to bottom right, #7ed56f, #55c57a); }
+      .card__side--back--3 {
+        background-image: linear-gradient(to bottom right, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0deg); }
+
 .composition {
   position: relative; }
   .composition__photo {
@@ -281,9 +312,10 @@ body {
   .header__text-box {
     text-align: center; }
 
-.section-about {
+.section-about,
+.section-tours {
   background-color: #f7f7f7;
-  padding: 25vh 0;
+  padding: 25vh 6rem;
   margin-top: -20vh; }
 
 .section-features {
@@ -296,3 +328,12 @@ body {
   background-position: top;
   display: flex;
   align-items: center; }
+
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  scroll-padding: 18vh; }
+  html .scroll-clip {
+    scroll-snap-align: center; }
+    html .scroll-clip.header {
+      scroll-snap-align: start; }
