@@ -10,10 +10,11 @@
   background-image: linear-gradient(
       to right bottom,
       rgba($light-green, 0.8),
-      rgba($light-green, 0.8)
+      rgba($green, 0.8)
     ),
     url("../img/nat-4.jpg");
   height: 95vh;
+  -webkit-clip-path: polygon(0 20vh, 100% 0, 100% 75vh, 0% 100%);
   clip-path: polygon(0 20vh, 100% 0, 100% 75vh, 0% 100%);
   padding: 20vh 6rem;
   background-size: cover;
