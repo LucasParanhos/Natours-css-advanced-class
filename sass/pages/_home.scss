@@ -1,5 +1,4 @@
-.section-about,
-.section-tours {
+.section-about {
   background-color: $light-gray;
   padding: 25vh 6rem;
   margin-top: -20vh;
@@ -23,16 +22,38 @@
   align-items: center;
 }
 
-html {
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
-  scroll-padding: 18vh;
+.section-tours {
+  background-color: $light-gray;
+  padding: 25vh 6rem 10vh 6rem;
+  margin-top: -20vh;
+}
 
-  .scroll-clip {
-    scroll-snap-align: center;
+.section-stories {
+  padding: 15rem 0;
+  position: relative;
+  overflow: hidden;
+}
 
-    &.header {
-      scroll-snap-align: start;
-    }
+.section-booking {
+  padding: 15rem 6rem;
+  background-image: linear-gradient(to right bottom, $light-green, $dark-green);
+}
+
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba($white, 0.9) 0%,
+      rgba($white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 4rem rgba($black, 0.15);
+
+  &__from{
+    width: 50%;
+    padding: 6rem;
   }
+  height: 50rem;
 }

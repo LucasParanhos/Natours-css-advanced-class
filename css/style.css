@@ -54,6 +54,15 @@ body {
   -webkit-box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.1);
   background-color: #ddd; }
 
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  scroll-padding: 18vh; }
+  html .scroll-clip {
+    scroll-snap-align: center; }
+    html .scroll-clip.header {
+      scroll-snap-align: start; }
+
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -136,6 +145,20 @@ body {
   font-size: 1.6rem; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -347,6 +370,52 @@ body {
   .feature-box:hover {
     transform: translateY(-2rem) scale(1.3); }
 
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  padding: 6rem 10rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story__shape {
+    height: 15rem;
+    width: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative; }
+  .story__image {
+    height: 100%;
+    transform: translateX(-4rem);
+    transform: scale(1.3);
+    backface-visibility: hidden;
+    transition: all 0.5s; }
+  .story__text {
+    transform: skewX(12deg); }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    backface-visibility: hidden; }
+  .story:hover .story__image {
+    transform: scale(1);
+    filter: blur(0.1rem) brightness(0.5); }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -394,8 +463,7 @@ body {
   .header__text-box {
     text-align: center; }
 
-.section-about,
-.section-tours {
+.section-about {
   background-color: #f7f7f7;
   padding: 25vh 6rem;
   margin-top: -20vh; }
@@ -412,11 +480,26 @@ body {
   display: flex;
   align-items: center; }
 
-html {
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
-  scroll-padding: 18vh; }
-  html .scroll-clip {
-    scroll-snap-align: center; }
-    html .scroll-clip.header {
-      scroll-snap-align: start; }
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25vh 6rem 10vh 6rem;
+  margin-top: -20vh; }
+
+.section-stories {
+  padding: 15rem 0;
+  position: relative;
+  overflow: hidden; }
+
+.section-booking {
+  padding: 15rem 6rem;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  height: 50rem; }
+  .book__from {
+    width: 50%;
+    padding: 6rem; }

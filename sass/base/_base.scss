@@ -32,3 +32,18 @@ body {
   -webkit-box-shadow: inset 0 0 0.6rem rgba($black, 0.1);
   background-color: $light-gray-2;
 }
+
+
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  scroll-padding: 18vh;
+
+  .scroll-clip {
+    scroll-snap-align: center;
+
+    &.header {
+      scroll-snap-align: start;
+    }
+  }
+}
