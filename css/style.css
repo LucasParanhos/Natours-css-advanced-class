@@ -1,29 +1,29 @@
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-bottom-huge {
-  margin-bottom: 10rem; }
+  margin-bottom: 10rem !important; }
 
 .u-margin-top-small {
-  margin-top: 1.5rem; }
+  margin-top: 1.5rem !important; }
 
 .u-margin-top-medium {
-  margin-top: 4rem; }
+  margin-top: 4rem !important; }
 
 .u-margin-top-big {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 .u-margin-top-huge {
-  margin-top: 10rem; }
+  margin-top: 10rem !important; }
 
 html {
   /* Using percentages to allow user settings of accecibility, 62.5% = 10px if the user didn't change the default font size */
@@ -53,15 +53,6 @@ body {
   border-radius: 1rem;
   -webkit-box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.1);
   background-color: #ddd; }
-
-html {
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
-  scroll-padding: 18vh; }
-  html .scroll-clip {
-    scroll-snap-align: center; }
-    html .scroll-clip.header {
-      scroll-snap-align: start; }
 
 @keyframes moveInBottom {
   0% {
@@ -160,7 +151,7 @@ body {
     width: 100%;
     object-fit: cover; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -168,15 +159,18 @@ body {
   display: inline-block;
   transition: 0.2s all;
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  border: none;
+  cursor: default; }
 
 .btn--animated {
   animation: moveInBottom 0.5s backwards ease-out 1s; }
 
-.btn:hover {
+.btn:focus, .btn:hover {
+  outline: none;
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
+  .btn:focus::after, .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
@@ -209,7 +203,7 @@ body {
   .btn--green::after {
     background: #55c57a; }
 
-.btn-text:link, .btn-text:visited {
+.btn-text, .btn-text:link, .btn-text:visited {
   color: #55c57a;
   display: inline-block;
   text-decoration: none;
@@ -217,7 +211,7 @@ body {
   font-weight: 700;
   border-bottom: 1px solid #55c57a;
   transition: all 0.2s;
-  padding: .3rem; }
+  padding: 0.3rem; }
 
 .btn-text:hover {
   background-color: #55c57a;
@@ -225,7 +219,7 @@ body {
   transform: translateY(-0.2rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
-.btn-text:active {
+.btn-text:focus, .btn-text:active {
   transform: translateY(0);
   box-shadow: 0 0.5rem 1rem var rgba(0, 0, 0, 0.2); }
 
@@ -383,7 +377,8 @@ body {
   border: none;
   border-bottom: 3px solid transparent;
   width: 90%;
-  display: block; }
+  display: block;
+  transition: border-color 0.2s; }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -405,6 +400,47 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 3.5rem;
+  text-align: center;
+  display: flex; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 0.5rem solid #55c57a;
+  border-radius: 50rem;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  .form__radio-button::after {
+    content: "";
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    border-radius: 50rem;
+    opacity: 0;
+    transition: opacity 0.2s; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .story {
   width: 75%;
@@ -534,8 +570,7 @@ body {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: cover;
   border-radius: 1rem;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  height: 50rem; }
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
   .book__form {
     width: 50%;
     padding: 6rem;
