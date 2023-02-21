@@ -139,13 +139,18 @@
     background: transparent;
 
     &::after {
-      transform: rotate(-45deg);
+      transform: rotate(225deg);
       top: 0;
     }
 
     &::before {
-      transform: rotate(45deg);
+      transform: rotate(135deg);
       top: 0;
     }
   }
+}
+
+body:has( .navigation__checkbox:checked){
+  overflow: hidden;
+  height: 100vh;
 }
