@@ -5,7 +5,7 @@
       rgba($light-green, 0.8),
       rgba($green, 0.8)
     ),
-    url("../img/hero.jpg");
+    url("../img/hero-small.jpg");
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
   background-size: cover;
@@ -15,6 +15,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-resolution: 192dpi) and (min-width: $small-width),
+    (min-width: $huge-width) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($light-green, 0.8),
+        rgba($green, 0.8)
+      ),
+      url("../img/hero.jpg");
+  }
 
   @include respond(tab-port) {
     border-radius: 0;
