@@ -3,15 +3,32 @@
   margin: 0 auto;
   @include clearfix;
 
+  @include respond(tab-port) {
+    max-width: 50rem;
+  }
+
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   [class^="col-"] {
     float: left;
 
+    @include respond(tab-port) {
+      width: 100% !important;
+    }
+
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
     }
   }
 
@@ -20,10 +37,7 @@
       .col-#{$i}-of-#{$size} {
         width: calc(
           (
-              (
-                  (100% - (#{$gutter-horizontal} * (#{$size} - 1))) /
-                    #{$size}
-                ) *
+              ((100% - (#{$gutter-horizontal} * (#{$size} - 1))) / #{$size}) *
                 #{$i}
             ) +
             ((#{$i} - 1) * #{$gutter-horizontal})
