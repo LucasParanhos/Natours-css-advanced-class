@@ -97,17 +97,23 @@
           <div class="col-1-of-2">
             <div class="composition">
               <img
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
                 src="img/nat-1-large.jpg"
                 alt="River at the forest"
                 class="composition__photo composition__photo--p1"
+                sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
               /><img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
                 src="img/nat-2-large.jpg"
                 alt="Biking at the mountains"
                 class="composition__photo composition__photo--p2"
+                sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
               /><img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
                 src="img/nat-3-large.jpg"
                 alt="At the peek of a mountain"
                 class="composition__photo composition__photo--p3"
+                sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
               />
             </div>
           </div>
@@ -402,9 +408,10 @@
     </main>
 
     <footer class="footer">
-      <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo" />
-      </div>
+      <picture class="footer__logo-box">
+        <source srcset="img/logo-green-small-1x.png 1x,img/logo-green-small-2x.png 2x " media="(max-width: 37.5em)" />
+        <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo" />
+      </picture>
       <div class="row">
         <div class="col-1-of-2">
           <div class="footer__navigation">
