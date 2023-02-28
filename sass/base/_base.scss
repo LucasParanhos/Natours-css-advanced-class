@@ -50,3 +50,8 @@ body {
   -webkit-box-shadow: inset 0 0 0.6rem rgba($black, 0.1);
   background-color: $light-gray-2;
 }
+
+::selection{
+  background-color: $green;
+  color: $white;
+}
